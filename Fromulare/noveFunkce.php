@@ -10,9 +10,8 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <p>Zadejte dvě čísla: </p>
         <form method="POST" action = "">
-            <input name="text" type="text" /> <br />
+        <label>Zadejte Text: </label><input name="text" type="text" /> <br />
             <input type="submit" value="Dělej" />
         </form>
         <?php
@@ -32,6 +31,32 @@ and open the template in the editor.
                 echo("První znak: ". mb_substr($text,0,1).NL);
                 echo("Bez prvního znaku: ". mb_substr($text,1).NL);
                 echo("Poslední znak: ". mb_substr($text,-1,1).NL);
+                
+                // mb_strpos($text," ")     Vrátí pozici prvního výskytu
+                // Pokud funkce podřetězec nenajde, vrátí false
+                // Abychom odlišili false od 0, musíme porovnávat přes ===
+                // $a === $b hodnoty se rovnají a jsou stejného datového typu
+                
+                if (mb_strpos($text, " ")=== false)
+                {
+                    echo("V textu se nevyskytuje mezera".NL);
+                }
+                else
+                {
+                    echo("První pozice mezery v textu je ". mb_strpos($text," ").NL);
+                }
+                
+                // str_replace(" ","", $text) v $text nahradí mezeru ""
+                echo("Odstraněnění mezer: ". str_replace(" ", "", $text).NL);
+                echo("<b>Výpis znaků pod sebe</b>".NL);
+                
+                for ($i = 0; $i<mb_strlen($text);$i++)
+                    echo($text[$i].NL);
+                
+            }       
+            else
+            {
+                echo("Zadej text: ");
             }
         }
         ?>

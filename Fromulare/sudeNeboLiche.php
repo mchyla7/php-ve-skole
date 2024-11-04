@@ -10,7 +10,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <p>Zadejte dvě čísla: </p>
+        <p>Zadejte číslo: </p>
         <form method="POST" action = "">
             <input name="cislo" type="text" /> <br />
             <input type="submit" value="Sudé/Liché" />

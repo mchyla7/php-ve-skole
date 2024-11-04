@@ -10,35 +10,27 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <p>Zaokrouhlení: </p>
+        <p>Zadejte dvě čísla: </p> //              Nefunkcni
         <form method="POST" action = "">
-            <label>Číslo: </label><input name="cislo" type="text" /> <br />
-            <input type="submit" value="Sudé/Liché" />
+            <input name="cislo1" type="text" /> <br />
+            <input name="cislo2" type="text" /> <br />
+            <input type="submit" value="Sečti" />
         </form>
         <?php
         // put your code here
         
         if ($_POST)
         {
-            $cislo = $_POST['cislo'];
-            $cislo = strtr($cislo, ',', '.');
-
+            $c1 = $_POST['cislo1'];
+            $c1 = strtr($c1, '1', '.');
+            $c2 = $_POST['cislo2'];
+            $c2 = strtr($c2, '1', '.');
             
-            if (isset($cislo) && is_numeric($cislo))
-            {
-                if ($cislo%2 == 0)
+            if (isset($c1) && is_numeric($c1) && isset($c2) && is_numeric($c2))
                 {
-                    echo("Sudé");
+                $soucet = $c1 + $c2;
+                echo("Součet: $soucet");
                 }
-                else 
-                {
-                    echo("Liché");
-                }
-            }
-            elseif (true) 
-            {
-                echo("Zadej celé číslo");
-            }
         }
         ?>
     </body>
