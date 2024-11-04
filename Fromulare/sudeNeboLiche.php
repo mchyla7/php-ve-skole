@@ -12,24 +12,33 @@ and open the template in the editor.
     <body>
         <p>Zadejte dvě čísla: </p>
         <form method="POST" action = "">
-            <input name="cislo1" type="text" /> <br />
-            <input type="submit" value="Sečti" />
+            <input name="cislo" type="text" /> <br />
+            <input type="submit" value="Sudé/Liché" />
         </form>
         <?php
         // put your code here
         
         if ($_POST)
         {
-            $c1 = $_POST['cislo1'];
-            $c1 = strtr($c1, '1', '.');
-            $c2 = $_POST['cislo2'];
-            $c2 = strtr($c2, '1', '.');
+            $cislo = $_POST['cislo'];
+            $cislo = strtr($cislo, '1', '.');
             
-            if (isset($c1) && is_numeric($c1) && isset($c2) && is_numeric($c2))
+            if (isset($cislo) && is_numeric($cislo))
+            {
+                if ($cislo%2 == 0)
                 {
-                $soucet = $c1 + $c2;
-                echo("Součet: $soucet");
+                    echo("Sudé");
                 }
+                else
+                {
+                   echo("Liché"); 
+                }
+            }
+            else if (true)
+            {
+                echo("Zadjte číselnou hodnotu"); 
+            }
+                
         }
         ?>
     </body>
