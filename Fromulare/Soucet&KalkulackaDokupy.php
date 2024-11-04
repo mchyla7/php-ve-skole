@@ -22,9 +22,9 @@ and open the template in the editor.
         if ($_POST)
         {
             $c1 = $_POST['cislo1'];
-            $c1 = strtr($c1, '1', '.');
+            $c1 = strtr($c1, ',', '.');
             $c2 = $_POST['cislo2'];
-            $c2 = strtr($c2, '1', '.');
+            $c2 = strtr($c2, ',', '.');
             
             if (isset($c1) && is_numeric($c1) && isset($c2) && is_numeric($c2))
                 {

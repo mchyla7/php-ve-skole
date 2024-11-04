@@ -13,7 +13,6 @@ and open the template in the editor.
         <p>Zadejte dvě čísla: </p>
         <form method="POST" action = "">
             <input name="cislo1" type="text" /> <br />
-            <input name="cislo2" type="text" /> <br />
             <input type="submit" value="Sečti" />
         </form>
         <?php
@@ -22,30 +21,15 @@ and open the template in the editor.
         if ($_POST)
         {
             $c1 = $_POST['cislo1'];
+            $c1 = strtr($c1, '1', '.');
             $c2 = $_POST['cislo2'];
-            $c1 = strtr($c1, ',', '.'); // Vymění "," za "."
-            $c2 = strtr($c2, ',', '.');
+            $c2 = strtr($c2, '1', '.');
             
             if (isset($c1) && is_numeric($c1) && isset($c2) && is_numeric($c2))
                 {
-                
-                $c1 = (float)$c1; // Přetypuje
-                $c2 = (float)$c2;
-                
                 $soucet = $c1 + $c2;
-                $rozdil = $c1 - $c2;
-                $soucin = $c1 * $c2;
-                $podil = $c1 / $c2;
-                
-                echo("Součet: $soucet\n");
-                echo("Rozdíl: $rozdil\n");
-                echo("Součin: $soucin\n");
-                echo("Podíl: $podil\n");
+                echo("Součet: $soucet");
                 }
-            else
-            {
-                echo("Zadej číselnou hodnotu");
-            }
         }
         ?>
     </body>
