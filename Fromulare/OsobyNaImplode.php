@@ -27,6 +27,7 @@ and open the template in the editor.
             foreach ($osoby as $jmena)
             {
                 $jmenoaprijmeni = explode($oddelovac, $jmena);
+                $jmenoaprijmeni = mb_strtoupper(mb_substr($jmenoaprijmeni, 0,1)).mb_strtolower(mb_substr($jmenoaprijmeni, 1));
                 echo ("<br>".$jmenoaprijmeni[1]);
                 echo (" ".$jmenoaprijmeni[0]);
             }
