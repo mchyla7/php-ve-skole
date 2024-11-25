@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <form method="POST" action = "">
-        <label>Zadejte čísla:</label><input name="cisla" type="text" /> <br />
+        <label>Zadejte osoby (Jméno Příjmení):</label><input name="osoby" type="text" /> <br />
         <label>Zadejte oddělovač hodnot:</label><input name="oddelovac" type="text" /> <br />
             <input type="submit" value="Dělej" />
         </form>
@@ -19,17 +19,17 @@ and open the template in the editor.
         // put your code here
         
         define("NL","<br>\n");
-        $cisla = $_POST['cisla'];
+        $osoby = $_POST['osoby'];
         $oddelovac = $_POST['oddelovac'];
         
-        if(!empty($cisla) && !empty(oddelovac))
+        if(!empty($osoby) && !empty(oddelovac))
         {
-            $pole = explode($oddelovac, $cisla);
-            echo ("Výpis pod sebe:".NL);
-            sort($pole);
-            echo(implode(NL, $pole).NL);
-            echo ("Maximální:".max($pole).NL);
-            echo ("Minimální:".min($pole).NL);
+            foreach ($osoby as $jmena)
+            {
+                $jmenoaprijmeni = explode($oddelovac, $jmena);
+                echo ("<br>".$jmenoaprijmeni[1]);
+                echo (" ".$jmenoaprijmeni[0]);
+            }
         }
         else 
         {
