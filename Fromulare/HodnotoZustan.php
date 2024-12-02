@@ -43,8 +43,9 @@ and open the template in the editor.
         <p>Zadejte číslo: </p>
         <p> <?php if (isset($vyzva)) echo ($vyzva); ?><p>
         <form method="POST" action = "">
-            <input name="cislo" type="text" /> <br />
+            <input name="cislo" type="text" value="<?php if isset($cislo)) echo($cislo)?>" /> <br />
             <input type="submit" value="Pal!" />
+            
         </form>
         
     </body>
