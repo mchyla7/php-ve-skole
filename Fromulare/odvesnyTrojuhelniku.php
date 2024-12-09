@@ -9,21 +9,20 @@ and open the template in the editor.
         
         if ($_POST)
         {
-            $cislo = $_POST['cislo'];
-            $cislo = strtr($cislo, ',', '.');
+            $odvesna1 = $_POST['odvesna1'];
+            $odvesna1 = strtr($odvesna1, ',', '.');
+            $odvesna2 = $_POST['odvesna2'];
+            $odvesna2 = strtr($odvesna2, ',', '.');
             
-            if (isset($cislo) && is_numeric($cislo))
+            if (isset($odvesna1) && is_numeric($odvesna1) && isset($odvesna2) && is_numeric($odvesna2))
             {
-                if ($cislo > 0)
+                if ($odvesna1 > 0 && $odvesna2 > 0)
                 {
-                    echo("Kladné");
+                    $vysledek = round(sqrt(pow($odvesna1, 2) + pow($odvesna2, 2)), 2);
                 }
-                elseif ($cislo < 0)
+                else
                 {
-                   echo("Záporné"); 
-                }
-                else {
-                    echo("Nula"); 
+                    $vyzva = "Zadejte kladná čísla!";
                 }
             }
             else if (true)
@@ -43,9 +42,10 @@ and open the template in the editor.
         <p>Zadejte číslo: </p>
         <p> <?php if (isset($vyzva)) echo ($vyzva); ?><p>
         <form method="POST" action = "">
-            <input name="cislo" type="text" value="<?php if (isset($cislo)) echo($cislo)?>" /> <br />
+            <input name="odvesna1" type="text" value="<?php if (isset($odvesna1)) echo($odvesna1)?>" /> <br />
+            <input name="odvesna2" type="text" value="<?php if (isset($odvesna2)) echo($odvesna2)?>" /> <br />
             <input type="submit" value="Pal!" />
-            
+            <output><strong><?php if (isset($vysledek)) echo ($vysledek); ?></strong></output>
         </form>
         
     </body>
