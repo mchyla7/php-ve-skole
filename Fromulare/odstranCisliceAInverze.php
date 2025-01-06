@@ -28,13 +28,14 @@ and open the template in the editor.
                 $cislisce = array(0,1,2,3,4,5,6,7,8,9);
                 foreach ($cislisce as $c) $text = str_replace ($c, "", $text);
                         
-                for ($i=mb_strlen($text)-1;$i>=0;i--)echo($text[$i]);
+                for ($i=mb_strlen($text)-1;$i>=0;$i--)echo($text[$i]);
                 
             }
-        else
-        {
+            }
+            else
+            {
                 echo("Zadej text: ");
-        }
+            }
         ?>
     </body>
 </html>
