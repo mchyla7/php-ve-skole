@@ -19,8 +19,8 @@ and open the template in the editor.
             </select>
             <input type="text" name="cislo2">
             <input type="submit" value="="><br>
-            <input type="radio" name="nezaokrouhlit" value="nezaokrouhlit">Nezaokrouhlit<br>
-            <input type="radio" name="jednoMisto" value="jednoMisto">Zaokrouhlit na jedno místo<br>
+            <input type="radio" name="nezaokrouhlit">Nezaokrouhlit<br>
+            <input type="radio" name="jednoMisto">Zaokrouhlit na jedno místo<br>
         
     </head>
     <body>
