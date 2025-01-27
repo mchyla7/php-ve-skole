@@ -13,18 +13,40 @@ and open the template in the editor.
         if ($_POST['reset'] == "Ano")
         {
             $_SESSION['soucet'] = 0;
+            $_SESSION['vypis'] = "";
+            $_SESSION['vypisZnamenek'] = "";
         }
         else
         {
             $cislo1 = trim($_POST['cislo1']);
+            $_SESSION['vypis'] .= $cislo1 . ", ";
 
             if (isset($cislo1) && is_numeric($cislo1))
             {
+                if ($_POST['operace'] == "-")
+                {
+                    $_SESSION['soucet'] =  $_SESSION['soucet'] - $cislo1;
+                    $_SESSION['vypisZnamenek'] .= "-" . ", ";
+                }
+                else if ($_POST['operace'] == "*")
+                {
+                    $_SESSION['soucet'] = $_SESSION['soucet'] * $cislo1;;
+                    $_SESSION['vypisZnamenek'] .= "*" . ", ";
+                }
+                else if ($_POST['operace'] == "/")
+                {
+                    $_SESSION['soucet'] = $_SESSION['soucet'] / $cislo1;;
+                    $_SESSION['vypisZnamenek'] .= "/" . ", ";
+                }
+                else
+                {
                 $_SESSION['soucet'] += $cislo1;
+                $_SESSION['vypisZnamenek'] .= "+" . ", ";
+                }
             }
             else
             {
-            $vyzva = "Zadejte číselnou hodnotu";
+                $vyzva = "Zadejte číselnou hodnotu";
             }
         }
     }
@@ -47,13 +69,20 @@ and open the template in the editor.
             <input name="cislo1" type="text"/>
             <br /> <br />
             <input type="submit" value="Přičíst"/>
-        </form>
-        <p>Vynulovat součet</p>
-        <form method="POST" action="">
+            <select name="operace">
+                <option value="+" selected>+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <p>Vynulovat součet</p>
             <input type="radio" name="reset" value="Ano"/>Ano
             <input type="radio" name="reset" value="Ne" checked/>Ne
+        </form>
             <br>
             </br>
             <?php if (isset($_SESSION['soucet'])) echo("Výsledek je: ". $_SESSION['soucet']);?></br> </br>
+            <?php if (isset($_SESSION['vypis'])) echo("Čísla: ". $_SESSION['vypis']);?></br>
+            <?php if (isset($_SESSION['vypisZnamenek'])) echo("Znaménka: ". $_SESSION['vypisZnamenek']);?></br>
     </body>
 </html>
