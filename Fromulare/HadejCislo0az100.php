@@ -14,17 +14,21 @@ and open the template in the editor.
             if ($cislo < $_SESSION['cisloGen'])
             {
                 echo "Zadej větší číslo";
+                $_SESSION['pocetHadaní']++;
             }
             else if ($cislo > $_SESSION['cisloGen'])
             {
                 echo "Zadej menší číslo";
+                $_SESSION['pocetHadaní']++;
             }
             else
             {
                 echo "Gratuluji, uhádl jsi číslo";
+                echo "Počet hádání: " . $_SESSION['pocetHadaní'];
+                $_SESSION['pocetHadaní'] = 0;
                 $_SESSION['cisloGen'] = rand(0, 100);
             }
-        }
+        }   
         else
         {
             echo "Zadej číslo";
