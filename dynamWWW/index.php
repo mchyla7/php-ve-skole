@@ -8,7 +8,7 @@
   <body>
     <div class="obal">
       <div class="hlavicka">
-        Toto je hlavička
+        Mužeš si změnit hlavičku!
       </div> 
       <!--KONEC HLAVIČKA -->
       
@@ -34,7 +34,7 @@
       </div> <!-- KONEC PAS -->
 
       <div class="paticka">
-        Patička
+        A toto je patička
       </div> <!-- KONEC PATIČKA-->
     </div> <!-- KONEC OBAL -->
   </body>

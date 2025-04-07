@@ -13,5 +13,14 @@
         <li>
             <a href="index.php?stranka=kontakt">Kontakt</a>
         </li>
+        <li>
+            <a href="index.php?stranka=hadej">Hadej čísla</a>
+        </li>
+        <li>
+            <a href="index.php?stranka=jeToTrojuhelnik">Je to trojuhelník?</a>
+        </li>
+        <li>
+            <a href="index.php?stranka=TvojeInicialy">Tvoje Iniciály</a>
+        </li>
     </ul>
 </nav>

@@ -45,6 +45,7 @@ and open the template in the editor.
         <form method="post" action="#">
             <input type="hidden" name="nacist" value="1">
             <input type="submit" value="Vypsat">
+        </form>
         
         <?php
 
@@ -62,9 +63,6 @@ and open the template in the editor.
                 }
             }
         }
-
-        
-        
         ?>
 
         <h1>Smazat soubor</h1>
@@ -89,6 +87,6 @@ and open the template in the editor.
                 }
             }
         }
-
+        ?>
     </body>
 </html>

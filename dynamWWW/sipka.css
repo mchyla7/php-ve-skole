@@ -1,49 +1,76 @@
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        background-color: #DDD;
-      }
-      .obal {
-        width:800px;
-        margin: 0 auto;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-      }
-      .hlavicka, .paticka {
-        padding: 10px ;
-        clear: both;
+body {
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
 
-        text-align: center;
-        background-color: #FFF;
-      }       
-      .hlavicka {
-        font-size: 40px;
-        margin-bottom: 10px;
-      }
-      .paticka {
-        margin-top: 10px;
-      }
-      .pas { 
-      }
-      .pas:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      .levy {
-        width:150px;
-        float:left;
+.obal {
+  width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 20px; /* Přidán padding pro vnitřní odsazení */
+}
 
-        xpadding: 10px ;
-        background-color: #FFF;
-      }  
-      .obsah {
+.hlavicka, .paticka {
+  padding: 20px;
+  text-align: center;
+  background-color: #0078d7;
+  color: #fff;
+}
 
-        width: 640px;
-        float: right;
-        padding: 10px;
-        background-color: #FFF;
-      }
-      .vpravo {
-        float: right;
-      }       
+.hlavicka {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.paticka {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.pas {
+  padding: 20px;
+}
+
+.pas:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.levy {
+  width: 150px;
+  float: left;
+  padding: 10px;
+  background-color: #e8f0fe;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-right: 20px;
+}
+
+.obsah {
+  width: calc(100% - 190px);
+  float: right;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.vpravo {
+  float: right;
+  margin-left: 20px; /* Větší mezera mezi obrázkem a textem */
+  margin-bottom: 10px; /* Přidán spodní margin */
+  max-width: 100%; /* Zajistí, že obrázek nepřesáhne šířku boxu */
+  height: auto; /* Zachová proporce obrázku */
+}
